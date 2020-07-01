@@ -1,0 +1,23 @@
+{% extends "forum/base.html" %}
+{% load crispy_forms_tags %}
+{%block content%}
+
+   <div class="content-section" style="margin-top: 20px;">
+       <form method="POST" encytype='multipart/post-create'>
+           {% csrf_token %}
+           <fieldset class="form-group" style="margin-top: 20px;">
+               <legend class="border-bottom mb-1">Forum post!  </legend>
+               <h6 class="text-muted mb-4">Tell us what you know about tooling industry </h6>
+               {{ form|crispy }}
+
+           </fieldset>
+           <div class="form-group">
+               <button class="btn btn-outline-info" type="submit">Post</button>
+           </div>
+       </form>
+       
+
+   </div>
+{% endblock content %}  
+  
+
